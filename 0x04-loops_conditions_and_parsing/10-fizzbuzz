@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
-#Program that prints FizzBuzz sequence
-for i in {1..100}
+# displays Holberton School 10 times.
+
+COUNTER=1
+while [ $COUNTER -lt 101 ]
 do
-    if [ $((i % 5)) -eq 0 -a $((i % 3)) -eq 0 ]
+    if [ $((COUNTER%15)) = 0 ]
     then
-	echo "FizzBuzz"
-    elif [ $((i % 5)) -eq 0 ]
+        echo "FizzBuzz"
+    elif [ $((COUNTER%3)) = 0 ]
     then
-	echo "Buzz"
-    elif [ $((i % 3)) -eq 0 ]
+        echo "Fizz"
+    elif [ $((COUNTER%5)) = 0 ]
     then
-	echo "Fizz"
+        echo "Buzz"
     else
-	echo "$i"
+        echo "$COUNTER"
     fi
+    let COUNTER+=1
 done
